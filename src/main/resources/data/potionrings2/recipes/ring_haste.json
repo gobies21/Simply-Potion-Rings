@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ab ",
+    "bcb",
+    " b "
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:prismarine"
+    },
+    "b": {
+      "item": "minecraft:prismarine_crystals"
+    },
+    "c": {
+      "item": "potionrings2:potion_ring"
+    }
+  },
+  "result": {
+    "item": "potionrings2:ring_haste",
+    "count": 1
+  }
+}

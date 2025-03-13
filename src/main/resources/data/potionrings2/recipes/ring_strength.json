@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ab ",
+    "bcb",
+    " b "
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:magma_block"
+    },
+    "b": {
+      "item": "minecraft:blaze_powder"
+    },
+    "c": {
+      "item": "potionrings2:potion_ring"
+    }
+  },
+  "result": {
+    "item": "potionrings2:ring_strength",
+    "count": 1
+  }
+}
