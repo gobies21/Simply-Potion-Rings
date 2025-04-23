@@ -1,23 +1,16 @@
 package net.gobies.potionrings2.item.potionrings;
 
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.effect.MobEffect;
+import net.gobies.potionrings2.init.PotionRings2Handler;
+import net.gobies.potionrings2.item.ModItems;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.util.FastColor;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.client.renderer.texture.TextureAtlasSprite;
-import net.minecraft.client.Minecraft;
-import net.minecraft.world.inventory.InventoryMenu;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
-import top.theillusivec4.curios.api.CuriosApi;
+import org.jetbrains.annotations.NotNull;
 import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.type.capability.ICurioItem;
-
-import java.util.stream.IntStream;
 
 public class PotionRingHasteItem extends Item implements ICurioItem {
     public PotionRingHasteItem(Properties properties) {
@@ -25,40 +18,22 @@ public class PotionRingHasteItem extends Item implements ICurioItem {
     }
 
     @Override
-    public boolean isFoil(ItemStack stack) {
+    public boolean isFoil(@NotNull ItemStack stack) {
         return true;
     }
     @Override
-    public void curioTick(String identifier, int index, LivingEntity entity, ItemStack stack) {
-        int ringCount = CuriosApi.getCuriosHelper().getCuriosHandler(entity).map(handler ->
-                (int) handler.getCurios().values().stream()
-                        .flatMap(curio -> {
-                            int slots = curio.getSlots();
-                            return IntStream.range(0, slots)
-                                    .mapToObj(slotIndex -> curio.getStacks().getStackInSlot(slotIndex))
-                                    .limit(slots);
-                        })
-                        .filter(itemStack -> itemStack.getItem() instanceof PotionRingHasteItem)
-                        .count()).orElse(0);
-
+    public void curioTick(SlotContext slotContext, ItemStack stack) {
+        LivingEntity entity = slotContext.entity();
+        int ringCount = PotionRings2Handler.getEquippedCuriosCount(entity, ModItems.PotionRingHaste.get());
 
         int effectLevel = Math.min((int) ringCount - 1, 1);
         entity.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, -1, effectLevel, true, false));
     }
 
     @Override
-    public void onUnequip(String identifier, int index, LivingEntity entity, ItemStack stack) {
-        int ringCount = CuriosApi.getCuriosHelper().getCuriosHandler(entity).map(handler ->
-                (int) handler.getCurios().values().stream()
-                        .flatMap(curio -> {
-                            int slots = curio.getSlots();
-                            return IntStream.range(0, slots)
-                                    .mapToObj(curio.getStacks()::getStackInSlot)
-                                    .limit(slots);
-                        })
-                        .filter(itemStack -> itemStack.getItem() instanceof PotionRingHasteItem)
-                        .count()
-        ).orElse(0);
+    public void onUnequip(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
+        LivingEntity entity = slotContext.entity();
+        int ringCount = PotionRings2Handler.getEquippedCuriosCount(entity, ModItems.PotionRingHaste.get());
 
         if (ringCount > 0) {
             int effectLevel = Math.min(ringCount - 1, 1);

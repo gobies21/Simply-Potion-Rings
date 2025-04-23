@@ -1,6 +1,7 @@
 package net.gobies.potionrings2;
 
 import com.mojang.logging.LogUtils;
+import net.gobies.potionrings2.init.PotionRings2Handler;
 import net.gobies.potionrings2.item.ModCreativeModeTabs;
 import net.gobies.potionrings2.item.ModItems;
 import net.minecraftforge.common.MinecraftForge;
@@ -24,8 +25,8 @@ public class PotionRings2 {
 
         ModItems.register(modBus);
 
-        MinecraftForge.EVENT_BUS.register(this);
+        PotionRings2Handler.register();
 
-        //ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+        MinecraftForge.EVENT_BUS.register(this);
     }
 }
