@@ -26,7 +26,7 @@ public class PotionRingSpeedItem extends Item implements ICurioItem {
         LivingEntity entity = slotContext.entity();
         int ringCount = PotionRings2Handler.getEquippedCuriosCount(entity, ModItems.PotionRingSpeed.get());
 
-        int effectLevel = Math.min((int) ringCount - 1, 1);
+        int effectLevel = Math.min(ringCount - 1, 2);
         entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, -1, effectLevel, true, false));
     }
 
@@ -36,7 +36,7 @@ public class PotionRingSpeedItem extends Item implements ICurioItem {
         int ringCount = PotionRings2Handler.getEquippedCuriosCount(entity, ModItems.PotionRingSpeed.get());
 
         if (ringCount > 0) {
-            int effectLevel = Math.min(ringCount - 1, 1);
+            int effectLevel = Math.min(ringCount - 1, 2);
             entity.removeEffect(MobEffects.MOVEMENT_SPEED);
             entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, -1, effectLevel, true, false));
         } else {

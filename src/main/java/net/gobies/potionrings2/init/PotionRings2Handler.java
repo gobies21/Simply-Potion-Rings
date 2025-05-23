@@ -20,5 +20,6 @@ public class PotionRings2Handler {
                             int slots = curio.getSlots();
                             return IntStream.range(0, slots).mapToObj(slotIndex -> curio.getStacks().getStackInSlot(slotIndex)).limit(slots);
                         }).filter(itemStack -> itemStack.getItem() == targetItem).count()).orElse(0);
+
     }
 }

@@ -25,7 +25,7 @@ public class PotionRingRegenerationItem extends Item implements ICurioItem {
         LivingEntity entity = slotContext.entity();
         int ringCount = PotionRings2Handler.getEquippedCuriosCount(entity, ModItems.PotionRingRegeneration.get());
 
-        int effectLevel = Math.min((int) ringCount - 1, 1);
+        int effectLevel = Math.min(ringCount - 1, 2);
         entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, -1, effectLevel, true, false));
     }
 
@@ -35,7 +35,7 @@ public class PotionRingRegenerationItem extends Item implements ICurioItem {
         int ringCount = PotionRings2Handler.getEquippedCuriosCount(entity, ModItems.PotionRingRegeneration.get());
 
         if (ringCount > 0) {
-            int effectLevel = Math.min(ringCount - 1, 1);
+            int effectLevel = Math.min(ringCount - 1, 2);
             entity.removeEffect(MobEffects.REGENERATION);
             entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, -1, effectLevel, true, false));
         } else {

@@ -5,7 +5,7 @@ license = "All Rights Reserved"
 
 [[mods]]
 modId="potionrings2"
-version="1.0.0"
+version="1.0.2"
 displayName="Potion Rings"
 authors="gobies"
 description='''potion rings!'''
