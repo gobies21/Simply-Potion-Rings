@@ -9,20 +9,20 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
-public class ModCreativeModeTabs {
+public class PRModeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, PotionRings2.MOD_ID);
     public static final RegistryObject<CreativeModeTab> POTION_RINGS_TAB = CREATIVE_MODE_TABS.register("potionrings2_tab",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.PotionRingRegeneration.get()))
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(PRItems.PotionRingRegeneration.get()))
                     .title(Component.translatable("creativetab.potionrings2_tab"))
                     .displayItems((pParameters, pOutput) -> {
-                        pOutput.accept(ModItems.PotionRing.get());
-                        pOutput.accept(ModItems.PotionRingSpeed.get());
-                        pOutput.accept(ModItems.PotionRingJumpBoost.get());
-                        pOutput.accept(ModItems.PotionRingHaste.get());
-                        pOutput.accept(ModItems.PotionRingStrength.get());
-                        pOutput.accept(ModItems.PotionRingRegeneration.get());
-                        pOutput.accept(ModItems.PotionRingResistance.get());
+                        pOutput.accept(PRItems.PotionRing.get());
+                        pOutput.accept(PRItems.PotionRingSpeed.get());
+                        pOutput.accept(PRItems.PotionRingJumpBoost.get());
+                        pOutput.accept(PRItems.PotionRingHaste.get());
+                        pOutput.accept(PRItems.PotionRingStrength.get());
+                        pOutput.accept(PRItems.PotionRingRegeneration.get());
+                        pOutput.accept(PRItems.PotionRingResistance.get());
                     })
                     .build());
 

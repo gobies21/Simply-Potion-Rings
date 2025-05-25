@@ -1,18 +1,16 @@
 package net.gobies.potionrings2;
 
 import com.mojang.logging.LogUtils;
-import net.gobies.potionrings2.init.PotionRings2Handler;
-import net.gobies.potionrings2.item.ModCreativeModeTabs;
-import net.gobies.potionrings2.item.ModItems;
+import net.gobies.potionrings2.util.RingHandler;
+import net.gobies.potionrings2.item.PRItems;
+import net.gobies.potionrings2.item.PRModeTabs;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
-import static net.gobies.potionrings2.PotionRings2.MOD_ID;
-
-@Mod(MOD_ID)
+@Mod(PotionRings2.MOD_ID)
 public class PotionRings2 {
 
     public static final String MOD_ID = "potionrings2";
@@ -21,11 +19,11 @@ public class PotionRings2 {
     public PotionRings2() {
         IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        ModCreativeModeTabs.register(modBus);
+        PRModeTabs.register(modBus);
 
-        ModItems.register(modBus);
+        PRItems.register(modBus);
 
-        PotionRings2Handler.register();
+        RingHandler.register();
 
         MinecraftForge.EVENT_BUS.register(this);
     }

@@ -341,7 +341,7 @@
 [12Mar2025 10:17:18.387] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.config.ConfigTracker/CONFIG]: Config file blessfulled-client.toml for blessfulled tracking
 [12Mar2025 10:17:18.388] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Attempting to inject @EventBusSubscriber classes into the eventbus for blessfulled
 [12Mar2025 10:17:18.389] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Attempting to inject @EventBusSubscriber classes into the eventbus for potionrings2
-[12Mar2025 10:17:18.392] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing net.gobies.potionrings2.init.PotionRings2Properties to MOD
+[12Mar2025 10:17:18.392] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing net.gobies.potionrings2.init.PRProperties to MOD
 [12Mar2025 10:17:18.392] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing org.aqutheseal.blessfulled.triggers.DamagePopupTriggers to FORGE
 [12Mar2025 10:17:18.394] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing net.gobies.potionrings2.init.PotionRings2Slots to MOD
 [12Mar2025 10:17:18.395] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing org.aqutheseal.blessfulled.ClientSetupEvents to MOD

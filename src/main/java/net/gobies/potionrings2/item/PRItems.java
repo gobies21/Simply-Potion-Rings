@@ -8,7 +8,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-public class ModItems {
+public class PRItems {
     public static final DeferredRegister<Item> ITEMS;
     public static final RegistryObject<Item> PotionRing;
     public static final RegistryObject<Item> PotionRingSpeed;
@@ -18,7 +18,7 @@ public class ModItems {
     public static final RegistryObject<Item> PotionRingStrength;
     public static final RegistryObject<Item> PotionRingRegeneration;
 
-    public ModItems() {
+    public PRItems() {
     }
 
     public static void register(IEventBus eventBus) {
@@ -28,11 +28,11 @@ public class ModItems {
     static {
         ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, PotionRings2.MOD_ID);
         PotionRing = ITEMS.register("potion_ring", () -> new PotionRingItem(new Item.Properties()));
-        PotionRingSpeed = ITEMS.register("ring_speed", () -> new PotionRingSpeedItem(new Item.Properties()));
-        PotionRingHaste = ITEMS.register("ring_haste", () -> new PotionRingHasteItem(new Item.Properties()));
-        PotionRingResistance = ITEMS.register("ring_resistance", () -> new PotionRingResistanceItem(new Item.Properties()));
-        PotionRingJumpBoost = ITEMS.register("ring_jump_boost", () -> new PotionRingJumpBoostItem(new Item.Properties()));
-        PotionRingStrength = ITEMS.register("ring_strength", () -> new PotionRingStrengthItem(new Item.Properties()));
-        PotionRingRegeneration = ITEMS.register("ring_regeneration", () -> new PotionRingRegenerationItem(new Item.Properties()));
+        PotionRingSpeed = ITEMS.register("ring_speed", () -> new RingSpeedItem(new Item.Properties()));
+        PotionRingHaste = ITEMS.register("ring_haste", () -> new RingHasteItem(new Item.Properties()));
+        PotionRingResistance = ITEMS.register("ring_resistance", () -> new RingResistanceItem(new Item.Properties()));
+        PotionRingJumpBoost = ITEMS.register("ring_jump_boost", () -> new RingJumpBoostItem(new Item.Properties()));
+        PotionRingStrength = ITEMS.register("ring_strength", () -> new RingStrengthItem(new Item.Properties()));
+        PotionRingRegeneration = ITEMS.register("ring_regeneration", () -> new RingRegenerationItem(new Item.Properties()));
     }
 }

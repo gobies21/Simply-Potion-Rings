@@ -8,7 +8,7 @@ import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 public class PotionRingItem extends Item implements ICurioItem {
     public PotionRingItem(Properties properties) {
-        super(new Properties().stacksTo(1).rarity(Rarity.COMMON));
+        super(properties.stacksTo(1).rarity(Rarity.COMMON));
     }
 
     @Override
