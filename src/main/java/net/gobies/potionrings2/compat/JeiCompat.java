@@ -3,13 +3,10 @@ package net.gobies.potionrings2.compat;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.constants.VanillaTypes;
-import mezz.jei.api.runtime.IJeiRuntime;
-import net.gobies.potionrings2.item.potionrings.PotionRingItem;
+import mezz.jei.api.registration.ISubtypeRegistration;
+import net.gobies.potionrings2.init.PRItems;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.List;
 
 @JeiPlugin
 public class JeiCompat implements IModPlugin {
@@ -20,11 +17,7 @@ public class JeiCompat implements IModPlugin {
     }
 
     @Override
-    public void onRuntimeAvailable(@NotNull IJeiRuntime jeiRuntime) {
-        addItem(jeiRuntime, PotionRingItem.createPotionRing());
-    }
-
-    private void addItem(IJeiRuntime jeiRuntime, List<ItemStack> stacks) {
-        jeiRuntime.getIngredientManager().addIngredientsAtRuntime(VanillaTypes.ITEM_STACK, stacks);
+    public void registerItemSubtypes(@NotNull ISubtypeRegistration registration) {
+        registration.registerSubtypeInterpreter(VanillaTypes.ITEM_STACK, PRItems.PotionRing.get(), PotionRingSubTypeInterpreter.INSTANCE);
     }
 }

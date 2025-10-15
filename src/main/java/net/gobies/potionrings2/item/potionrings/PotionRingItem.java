@@ -8,7 +8,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -59,7 +58,6 @@ public class PotionRingItem extends Item implements ICurioItem {
             if (effect != null) {
                 entity.removeEffect(effect);
 
-                // Re-apply effects for other rings
                 List<ItemStack> equippedRings = RingHandler.getEquippedRings(entity, PRItems.PotionRing.get());
 
                 for (ItemStack equippedRing : equippedRings) {
