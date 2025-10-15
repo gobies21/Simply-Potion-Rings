@@ -7,10 +7,10 @@
   ],
   "key": {
     "a": {
-      "item": "minecraft:redstone_block"
+      "item": "minecraft:emerald_block"
     },
     "b": {
-      "item": "minecraft:sugar"
+      "item": "minecraft:emerald"
     },
     "c": {
       "item": "potionrings2:potion_ring"
@@ -18,7 +18,7 @@
   },
   "result": {
     "item": "potionrings2:potion_ring",
-    "nbt": "{Effect:\"minecraft:speed\"}",
+    "nbt": "{Effect:\"minecraft:luck\"}",
     "count": 1
   }
 }

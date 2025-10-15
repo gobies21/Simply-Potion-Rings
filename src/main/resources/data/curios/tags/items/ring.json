@@ -1,12 +1,6 @@
 {
   "replace": false,
   "values": [
-    "potionrings2:potion_ring",
-    "potionrings2:ring_speed",
-    "potionrings2:ring_haste",
-    "potionrings2:ring_resistance",
-    "potionrings2:ring_jump_boost",
-    "potionrings2:ring_strength",
-    "potionrings2:ring_regeneration"
+    "potionrings2:potion_ring"
   ]
 }

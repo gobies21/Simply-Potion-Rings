@@ -17,7 +17,8 @@
     }
   },
   "result": {
-    "item": "potionrings2:ring_resistance",
+    "item": "potionrings2:potion_ring",
+    "nbt": "{Effect:\"minecraft:resistance\"}",
     "count": 1
   }
 }

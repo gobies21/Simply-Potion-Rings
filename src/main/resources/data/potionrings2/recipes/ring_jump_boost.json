@@ -17,7 +17,8 @@
     }
   },
   "result": {
-    "item": "potionrings2:ring_jump_boost",
+    "item": "potionrings2:potion_ring",
+    "nbt": "{Effect:\"minecraft:jump_boost\"}",
     "count": 1
   }
 }

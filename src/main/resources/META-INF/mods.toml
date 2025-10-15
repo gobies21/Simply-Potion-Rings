@@ -5,10 +5,10 @@ license = "All Rights Reserved"
 
 [[mods]]
 modId="potionrings2"
-version="1.0.2"
+version="1.1.0"
 displayName="Potion Rings"
 authors="gobies"
-description='''potion rings!'''
+description='''Infinite potion effects in the form of rings'''
 credits="Credits to Vazkii as the original creator of this mod"
 
 [[dependencies.potionrings2]]

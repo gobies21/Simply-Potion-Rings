@@ -149,10 +149,13 @@ dependencies {
     compileOnly(fg.deobf("top.theillusivec4.curios:curios-forge:5.3.1+1.20.1:api"))
     runtimeOnly(fg.deobf("top.theillusivec4.curios:curios-forge:5.3.1+1.20.1"))
     compileOnly(fg.deobf("mezz.jei:jei-${minecraft_version}-forge-api:${jei_version}"))
-
+    compileOnly(fg.deobf("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}"))
     runtimeOnly(fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}"))
 
-    implementation fg.deobf("curse.maven:blessfulled-1182590:6174088")
+    runtimeOnly(fg.deobf("curse.maven:configured-457570:5180900"))
+    runtimeOnly(fg.deobf("curse.maven:catalogue-459701:4766090"))
+    runtimeOnly(fg.deobf("curse.maven:blessfulled-1182590:6174088"))
+    runtimeOnly(fg.deobf("curse.maven:crafttweaker-239197:6914010"))
 
 
 }

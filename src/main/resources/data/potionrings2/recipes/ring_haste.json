@@ -17,7 +17,8 @@
     }
   },
   "result": {
-    "item": "potionrings2:ring_haste",
+    "item": "potionrings2:potion_ring",
+    "nbt": "{Effect:\"minecraft:haste\"}",
     "count": 1
   }
 }
