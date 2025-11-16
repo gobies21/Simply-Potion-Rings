@@ -7,18 +7,22 @@
   ],
   "key": {
     "a": {
-      "item": "minecraft:magma_block"
+      "item": "minecraft:emerald_block"
     },
     "b": {
-      "item": "minecraft:blaze_powder"
+      "item": "minecraft:emerald"
     },
     "c": {
       "item": "potionrings2:potion_ring"
     }
   },
   "result": {
-    "item": "potionrings2:potion_ring",
-    "nbt": "{Effect:\"minecraft:strength\"}",
+    "id": "potionrings2:potion_ring",
+    "components": {
+      "potionrings2:effect": {
+        "id": "minecraft:luck"
+      }
+    },
     "count": 1
   }
 }

@@ -1,18 +1,17 @@
 package net.gobies.potionrings2.util;
 
 import net.gobies.potionrings2.PotionRings2;
+import net.gobies.potionrings2.init.PRDataComponents;
 import net.gobies.potionrings2.init.PRItems;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.item.Item;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.client.event.RegisterColorHandlersEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.registries.ForgeRegistries;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 
-@Mod.EventBusSubscriber(modid = PotionRings2.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+@EventBusSubscriber(modid = PotionRings2.MOD_ID, value = Dist.CLIENT)
 public class ColorHandler {
 
     @SubscribeEvent
@@ -21,17 +20,15 @@ public class ColorHandler {
     }
 
     private static void setGemColor(RegisterColorHandlersEvent.Item event, Item item) {
-        event.register((itemStack, tintIndex) -> {
+        event.register((stack, tintIndex) -> {
             if (tintIndex == 1) {
-                CompoundTag nbt = itemStack.getTag();
-                if (nbt != null && nbt.contains("Effect")) {
-                    String effectIdString = nbt.getString("Effect");
-                    ResourceLocation effectId = new ResourceLocation(effectIdString);
-                    MobEffect effect = ForgeRegistries.MOB_EFFECTS.getValue(effectId);
+                MobEffectInstance effectInstance = stack.get(PRDataComponents.EFFECT);
+                if (effectInstance != null) {
+                    MobEffect effect = effectInstance.getEffect().value();
+                    int argb = effect.getColor();
 
-                    if (effect != null) {
-                        return effect.getColor();
-                    }
+                    int rgb = argb & 0x00FFFFFF;
+                    return 0xFF000000 | rgb;
                 }
             }
             return -1;

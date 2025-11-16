@@ -7,18 +7,22 @@
   ],
   "key": {
     "a": {
-      "item": "minecraft:slime_block"
+      "item": "minecraft:enchanted_golden_apple"
     },
     "b": {
-      "item": "minecraft:rabbit_foot"
+      "item": "minecraft:honeycomb"
     },
     "c": {
       "item": "potionrings2:potion_ring"
     }
   },
   "result": {
-    "item": "potionrings2:potion_ring",
-    "nbt": "{Effect:\"minecraft:jump_boost\"}",
+    "id": "potionrings2:potion_ring",
+    "components": {
+      "potionrings2:effect": {
+        "id": "minecraft:health_boost"
+      }
+    },
     "count": 1
   }
 }

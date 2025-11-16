@@ -7,18 +7,22 @@
   ],
   "key": {
     "a": {
-      "item": "minecraft:emerald_block"
+      "item": "minecraft:magma_block"
     },
     "b": {
-      "item": "minecraft:emerald"
+      "item": "minecraft:blaze_powder"
     },
     "c": {
       "item": "potionrings2:potion_ring"
     }
   },
   "result": {
-    "item": "potionrings2:potion_ring",
-    "nbt": "{Effect:\"minecraft:health_boost\"}",
+    "id": "potionrings2:potion_ring",
+    "components": {
+      "potionrings2:effect": {
+        "id": "minecraft:strength"
+      }
+    },
     "count": 1
   }
 }

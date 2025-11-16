@@ -10,7 +10,10 @@ import org.jetbrains.annotations.NotNull;
 
 @JeiPlugin
 public class JeiCompat implements IModPlugin {
-    private final ResourceLocation PLUGIN_UID = new ResourceLocation("potionrings2", "jei_plugin");
+    private final ResourceLocation PLUGIN_UID = ResourceLocation.fromNamespaceAndPath("potionrings2", "jei_plugin");
+
+    public static void loadCompat() {
+    }
 
     public @NotNull ResourceLocation getPluginUid() {
         return PLUGIN_UID;

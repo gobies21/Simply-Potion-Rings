@@ -1,6 +1,6 @@
 
 modLoader="javafml"
-loaderVersion = "[47,)"
+loaderVersion = "${loader_version_range}"
 license = "All Rights Reserved"
 
 [[mods]]
@@ -12,22 +12,22 @@ description='''Infinite potion effects in the form of rings'''
 credits="Credits to Vazkii as the original creator of this mod"
 
 [[dependencies.potionrings2]]
-modId="forge"
+modId="neoforge"
 mandatory=true
-versionRange="${forge_version_range}"
+versionRange="${neo_version_range}"
 ordering="NONE"
 side="BOTH"
 
 [[dependencies.potionrings2]]
 modId="minecraft"
-mandatory=true
+type="required"
 versionRange="${minecraft_version_range}"
 ordering="NONE"
 side= "BOTH"
 
 [[dependencies.potionrings2]]
 modId="curios"
-mandatory=true
-versionRange ="[5.2.0+1.20.1,)"
+type="required"
+versionRange ="[9.5.0+1.20.1,)"
 ordering="NONE"
 side="BOTH"

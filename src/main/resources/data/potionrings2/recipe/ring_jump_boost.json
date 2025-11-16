@@ -7,18 +7,22 @@
   ],
   "key": {
     "a": {
-      "item": "minecraft:nether_star"
+      "item": "minecraft:slime_block"
     },
     "b": {
-      "item": "minecraft:ghast_tear"
+      "item": "minecraft:rabbit_foot"
     },
     "c": {
       "item": "potionrings2:potion_ring"
     }
   },
   "result": {
-    "item": "potionrings2:potion_ring",
-    "nbt": "{Effect:\"minecraft:regeneration\"}",
+    "id": "potionrings2:potion_ring",
+    "components": {
+      "potionrings2:effect": {
+        "id": "minecraft:jump_boost"
+      }
+    },
     "count": 1
   }
 }
