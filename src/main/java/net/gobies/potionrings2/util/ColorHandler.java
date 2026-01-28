@@ -25,9 +25,9 @@ public class ColorHandler {
                 MobEffectInstance effectInstance = stack.get(PRDataComponents.EFFECT);
                 if (effectInstance != null) {
                     MobEffect effect = effectInstance.getEffect().value();
-                    int argb = effect.getColor();
+                    int effectColor = effect.getColor();
 
-                    int rgb = argb & 0x00FFFFFF;
+                    int rgb = effectColor & 0x00FFFFFF;
                     return 0xFF000000 | rgb;
                 }
             }
