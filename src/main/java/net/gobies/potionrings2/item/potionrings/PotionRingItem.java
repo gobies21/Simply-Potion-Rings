@@ -39,7 +39,8 @@ public class PotionRingItem extends Item implements ICurioItem {
             MobEffect effect = effectHolder.value();
 
             int ringCount = RingHandler.getEquippedRingCount(entity, PRItems.PotionRing.get(), Objects.requireNonNull(BuiltInRegistries.MOB_EFFECT.getKey(effect)).toString());
-            int effectLevel = Math.min(ringCount - 1, 2);
+            int maxLevel = PRConfig.LEVEL.get() - 1;
+            int effectLevel = Math.min(ringCount - 1, maxLevel);
 
             entity.addEffect(new MobEffectInstance(effectHolder, 10, effectLevel, true, false));
         }
@@ -64,7 +65,8 @@ public class PotionRingItem extends Item implements ICurioItem {
                     ResourceLocation effectId = BuiltInRegistries.MOB_EFFECT.getKey(effect);
 
                     int ringCount = RingHandler.getEquippedRingCount(entity, PRItems.PotionRing.get(), Objects.requireNonNull(effectId).toString());
-                    int effectLevel = Math.min(ringCount - 1, 2);
+                    int maxLevel = PRConfig.LEVEL.get() - 1;
+                    int effectLevel = Math.min(ringCount - 1, maxLevel);
 
                     entity.addEffect(new MobEffectInstance(effectHolder, 10, effectLevel, true, false));
                 }
@@ -100,7 +102,7 @@ public class PotionRingItem extends Item implements ICurioItem {
 
     @Override
     public boolean isFoil(@NotNull ItemStack pStack) {
-        return hasEffect(pStack);
+        return hasEffect(pStack) && PRConfig.GLOW.get();
     }
 
     @Override
